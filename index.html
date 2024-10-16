@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Juego</title>
+  <style>
+    html, body {
+      height: 100%; /* Asegura que el body ocupe toda la altura */
+      margin: 0; /* Elimina márgenes por defecto */
+      padding: 0; /* Elimina padding por defecto */
+      overflow: hidden; /* Evita barras de desplazamiento */
+      display: flex; /* Usa flexbox para centrar el contenido */
+      flex-direction: column; /* Organiza el contenido en columnas */
+      align-items: center; /* Centra horizontalmente */
+      justify-content: center; /* Centra verticalmente */
+      background-image: url('fondo.jpg'); /* Imagen de fondo */
+      background-size: cover; /* Asegura que la imagen cubra toda la pantalla */
+      position: relative; /* Para posicionar mensajes y botones */
+    }
+
+    #mensajeMuerte, #mensajeLlave, #mensajeGanar, #mensajeSinLlave {
+      display: none;
+      position: absolute;
+      top: 10px;
+      left: 10px;
+      background-color: rgba(0, 0, 0, 0.7);
+      color: white;
+      padding: 10px;
+      border-radius: 5px;
+      z-index: 100; /* Asegura que el mensaje esté en frente */
+    }
+
+    #botonIniciar {
+      display: block;
+      margin: 20px auto;
+      padding: 10px 20px;
+      font-size: 16px;
+      cursor: pointer;
+      background-color: rgba(71, 11, 103, 0.8); /* Fondo semi-transparente */
+      color: white;
+      border: none;
+      border-radius: 5px;
+      z-index: 100; /* Asegura que el botón esté en frente */
+      position: relative; /* Asegura que esté sobre otros elementos */
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); /* Sombra para mayor visibilidad */
+    }
+
+    canvas {
+      width: 100%; /* Ancho completo del contenedor */
+      height: auto; /* Mantiene la relación de aspecto */
+      max-width: 800px; /* Ancho máximo del canvas */
+      max-height: 500px; /* Alto máximo del canvas */
+      z-index: 0; /* Asegura que el canvas esté detrás del botón */
+    }
+  </style>
+</head>
+<body>
+  
+  <button id="botonIniciar">Iniciar Juego</button>
+  <canvas id="canvas"></canvas>
+  <div id="mensajeMuerte">¡Has muerto!</div>
+  <div id="mensajeLlave">¡Has encontrado la llave!</div>
+  <div id="mensajeGanar">¡Has ganado! ¡Pasando al siguiente nivel!</div>
+  <div id="mensajeSinLlave">Necesitas la llave para abrir la puerta</div>
+
+  <script src="juego01.js"></script>
+  <script>
+    // Agregar evento de clic al botón para iniciar el juego
+    document.getElementById("botonIniciar").addEventListener("click", function() {
+      inicializa(); // Llama a la función inicializa para comenzar el juego
+      this.style.display = "none"; // Oculta el botón después de iniciar el juego
+    });
+  </script>
+</body>
+</html>
+
+
+

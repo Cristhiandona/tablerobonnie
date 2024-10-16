@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nivel 3</title>
+
+    <script src="nivel3.js"></script>
+    <style>
+        /* Estilo para el body para agregar la imagen de fondo */
+        body {
+            margin: 0; /* Elimina márgenes por defecto */
+            height: 100vh; /* Ocupa toda la altura de la ventana */
+            background-image: url('fondo.jpg'); /* Cambia 'fondo.jpg' por el nombre de tu imagen */
+            background-size: cover; /* Asegura que la imagen cubra toda la pantalla */
+            background-position: center; /* Centra la imagen */
+            overflow: hidden; /* Evita barras de desplazamiento */
+            display: flex; /* Usar flexbox */
+            justify-content: center; /* Centra horizontalmente */
+            align-items: center; /* Centra verticalmente */
+        }
+
+        /* Mensajes que aparecen en la ventana del Juego */
+        #mensajeMuerte, #mensajeLlave, #mensajeGanar, #mensajeSinLlave {
+            display: none;
+            background-color: #d0cd1c; 
+            color: white; 
+            padding: 10px; 
+            border: 2px solid black; 
+            position: absolute; 
+            top: 50%; 
+            left: 50%; 
+            transform: translate(-50%, -50%);
+        }
+    </style>
+</head>
+<body onload="inicializa()">
+
+    <canvas id="canvas" width="500" height="600"></canvas>
+
+    <!-- Mensajes que aparecen en la ventana del Juego -->
+    <div id="mensajeMuerte">¡ Has muerto! Intenta de nuevo !.</div>
+    <div id="mensajeLlave">¡ Haz obtenido la Llave!..</div>
+    <div id="mensajeGanar">¡ Ganaste, Continuas al siguiente Nivel !.</div>
+    <div id="mensajeSinLlave">¡ No tienes la Llave !</div>
+
+</body>
+</html>
