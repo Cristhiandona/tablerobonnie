@@ -318,7 +318,7 @@ function inicializa() {
 
   //Cargar imagen del mapa
   tileMap = new Image();
-  tileMap.src = "img/tilemap.png";
+  tileMap.src = "mapa1.png";
 
   //Crear Jugador
   protagonista = new jugador();
